@@ -1,25 +1,26 @@
 import logo from './logo.svg';
-import './App.css';
+import GithubIssue from './components/GithubIssue';
+import {createGlobalStyle} from 'styled-components'
 
-function App() {
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: #121212;
+    color: white;
+    width: 90%;
+    margin: auto;
+    @media only screen and (max-width: 500px) {
+      width: 100%;
+    }
+  }
+`
+function App() {  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyle />
+      <GithubIssue/>
     </div>
   );
 }
 
 export default App;
+
